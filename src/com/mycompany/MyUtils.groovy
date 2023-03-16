@@ -9,7 +9,7 @@ class MyUtils {
       throw new IllegalArgumentException("repoUrl cannot be null or empty")
     }
     try {
-      git branch: 'master', url: repoUrl
+      git branch: 'main', url: repoUrl
     } catch (Exception e) {
       throw new RuntimeException("Failed to checkout Git repository: $repoUrl", e)
     }
