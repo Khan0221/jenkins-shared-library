@@ -14,7 +14,7 @@
 
 def call(String hubUser, String region, String aws_account_id) {
 
-    withCredentials([amazonWebService(credentialsId: 'my-aws-creds', region: ${region})]) 
+    withCredentials([amazonWebService(credentialsId: 'my-aws-creds', region: '${region}' )]) 
     {
     sh "aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${aws_account_id}.dkr.ecr.${region}.amazonaws.com"
     }
